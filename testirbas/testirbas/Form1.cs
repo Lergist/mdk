@@ -26,6 +26,24 @@ namespace testirbas
             {
                 f2.Show();
             }
+            else
+            {
+                if(prior == "2")
+                {
+                    MessageBox.Show("stud");
+                }
+                else
+                {
+                    if(prior == "3")
+                    {
+                        MessageBox.Show("prepod");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильное имя пользователя или пароль");
+                    }
+                }
+            }
         }
     }
 }

@@ -13,15 +13,17 @@ namespace testirbas
         {
             using (SqlConnection con = new SqlConnection(testirbas.Properties.Settings.Default.Setting))
             {
-                string zap = @"select prioritet from users where login =" + login + " and password" + password + ";";
-                try
-                {
+                string zap = @"select prioritet from users where login ='" + login + "' and password='" + password + "';";
                     SqlCommand com = new SqlCommand(zap, con);
                     con.Open();
-                    return com.ExecuteScalar().ToString();
+                try
+                {
+                    string result = com.ExecuteScalar().ToString();
+                    return result;
                 }
                 catch(Exception ex)
                 {
+                    System.Windows.Forms.MessageBox.Show("Ошибка");
                     return "0";
                 }
             }
